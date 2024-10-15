@@ -3,83 +3,81 @@ body {
   font-family: "Montserrat", "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Evita el scroll horizontal */
+  overflow-x: hidden;
 }
 
 .background-video {
-  position: fixed; /* Fija el video en la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Asegura que el video esté detrás de otros elementos */
+  z-index: -1;
 }
 
 .background-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que el video cubra toda el área sin distorsión */
+  object-fit: cover;
 }
 
-/* Menu */
-.menu {
-  position: sticky;
-  top: 0; /* Hace que el menú quede fijo al hacer scroll */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  margin-right: 100px;
-  padding-top: 30px;
-}
-
-.menu ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  margin: 0;
-  padding: 0;
-  display: flex; /* Muestra los items en línea */
-  justify-content: right; /* Alinea el menú a la derecha */
-}
-
-.menu ul li {
-  margin: 0 20px; /* Espaciado entre los elementos del menú */
-}
-
-.menu ul li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ffffff; /* Color de texto blanco */
-  padding: 15px 20px; /* Espaciado dentro de los enlaces */
-  display: block; /* Hace que todo el área del enlace sea clicable */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
-}
-
-.menu ul li a:hover {
-  background-color: #010101; /* Color de fondo al pasar el ratón */
-  color: #5c5b5b; /* Color del texto al pasar el ratón */
-}
-
-/* título */
 .titulo-contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
+  min-height: 90vh;
   width: 100%;
   position: relative;
-  z-index: 100; /* Mantiene el título por encima del marciano */
+  z-index: 100;
 }
 
-.titulo__principal {
+.logo {
+  width: 700px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.contenedor {
+  position: relative;
+  height: 100vh; /* El contenedor ocupa toda la altura de la ventana */
+}
+
+.titulo-contenedor {
+  text-align: center; /* Centra el logo horizontalmente */
+  margin-top: 20px; /* Puedes ajustar este valor para espaciar el logo desde la parte superior */
+}
+
+.flecha {
+  position: fixed; /* Mantiene la flecha fija en la pantalla al hacer scroll */
+  bottom: 20px; /* Acomoda la flecha a cierta distancia del borde inferior */
+  right: 50px; /* Acomoda la flecha a cierta distancia del borde derecho */
+  width: 220px; /* Ajusta el tamaño de la flecha */
+  height: 190px;
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+}
+
+.flecha img {
+  width: 100%;
+  height: auto;
+}
+
+/*intro*/
+.titulo__intro {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bolder;
   color: white;
-  text-align: center;
+  margin-bottom: 20px;
 }
-
-/* introduccion */
 
 .contenedor__intro {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  padding: 20px;
+  padding-bottom: 100px;
 }
 
 .parrafo__intro {
@@ -91,21 +89,21 @@ body {
   padding-bottom: 30px;
 }
 
+/*nosotros*/
 .contenedor__nosotros {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  padding: 20px; /* Añade espacio alrededor */
+  padding: 20px;
 }
 
 .titulo__nosotros {
-  font-size: 23px;
+  font-size: 25px;
   text-transform: uppercase;
-  font-weight: lighter;
+  font-weight: bolder;
   color: white;
-  margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+  margin-bottom: 20px;
 }
 
 .parrafo__nosotros {
@@ -117,11 +115,12 @@ body {
 }
 
 .titulo__secundario__nosotros {
-  font-size: 15px;
+  font-size: 17px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-weight: lighter;
   margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 .parrafo__secundario__nosotros {
@@ -133,20 +132,21 @@ body {
   padding-bottom: 100px;
 }
 
+/*socios*/
 .contenedor__socios {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Añade espacio alrededor */
+  padding: 20px;
   padding-bottom: 100px;
 }
 
 .titulo__socios {
-  font-size: 22px;
+  font-size: 25px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-  font-weight: lighter;
+  font-weight: bolder;
   margin-bottom: 20px;
 }
 
@@ -158,71 +158,230 @@ body {
   line-height: 1.6;
 }
 
+/*reprocan*/
+#reprocann {
+  color: white;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
 .contenedor__reprocann {
-  display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Añade espacio alrededor */
-  padding-bottom: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .titulo__reprocann {
-  font-size: 22px;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
   text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  font-weight: lighter;
-  margin-bottom: 20px;
 }
 
-.parrafo__reprocann {
+.parrafo__reprocann,
+.inscription,
+.beneficios__reprocann {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
   color: white;
-  max-width: 800px;
+}
+
+.lista__inscripcion {
+  list-style-type: none;
+  margin: 0 auto 20px; /* Centra la lista y margenes */
+  padding: 0; /* Elimina el padding predeterminado */
+  max-width: 600px; /* Ancho máximo opcional */
+}
+
+.lista__inscripcion li {
+  margin-bottom: 19px; /* Espacio entre los elementos */
+  position: relative; /* Para posicionamiento relativo */
+  text-align: center; /* Centra el texto */
+  font-size: 20px; /* Tamaño de fuente */
+  padding-bottom: 10px; /* Espacio entre el texto y la línea */
+  border-bottom: 1px solid transparent; /* Línea debajo de cada elemento invisible */
+}
+
+.lista__inscripcion li::after {
+  content: "";
+  display: block; /* Para que el pseudo-elemento ocupe espacio */
+  width: 30%; /* Cambia este valor para ajustar el largo de la línea */
+  height: 2px; /* Grosor de la línea */
+  background-color: #ffffff; /* Color de la línea */
+  margin: 15px auto 0; /* Espacio entre el texto y la línea, centrado */
+}
+
+/* Agregamos un contenedor para el texto largo */
+.lista__inscripcion li p {
+  margin: 0; /* Elimina márgenes del párrafo */
+  padding: 0; /* Elimina padding del párrafo */
+  width: 100%; /* Asegura que el párrafo ocupe el ancho completo */
+  text-align: center; /* Centra el texto en el párrafo */
+}
+
+.lista__inscripcion li:last-child {
+  border-bottom: none; /* Elimina la línea del último elemento */
+}
+
+.titulo__secundario__reprocann {
+  font-size: 1.5em;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lista__beneficios {
+  font-size: 22px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase;
+  font-size: 25px; /* Tamaño de fuente ajustable */
+  cursor: pointer;
+  z-index: 1000; /* Asegurar que esté encima de otros elementos */
+  color: white; /* Ajustar color del texto */
+}
+
+/*animaciones*/
+@keyframes serpentear {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  50% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* Estilo del meteorito */
+.meteorito img {
+  position: absolute;
+  top: 50px; /* Ajusta la altura desde la parte superior de la pantalla */
+  right: -100px; /* Comienza fuera de la pantalla a la derecha */
+  width: 300px; /* Ajusta el tamaño del meteorito */
+  height: 200px;
+  animation: volarMeteorito 7s linear infinite; /* Aumenta a 15 segundos para que sea más lento */
+}
+
+/* Animación para mover el meteorito de derecha a izquierda sin rotación */
+@keyframes volarMeteorito {
+  0% {
+    transform: translateX(0) rotate(40deg); /* Comienza en su posición inicial y derecho */
+  }
+  100% {
+    transform: translateX(-150vw) rotate(30deg); /* Se mueve más allá de la pantalla hacia la izquierda y sigue derecho */
+  }
+}
+
+/* Aumentar el espacio entre el marciano y el texto */
+.texto-marciano {
+  display: flex;
+  justify-content: center; /* Mantiene centrado */
+  align-items: center;
+  gap: 50px; /* Aumenta el espacio entre el marciano y el texto */
+}
+
+/* Mantener el texto centrado y fijo en su lugar */
+.texto-contenido {
+  max-width: 800px; /* Consistente con el resto del diseño */
   text-align: center;
   font-size: 20px;
   line-height: 1.6;
+  margin: 0 auto; /* Centra el párrafo */
+  position: relative; /* Posicionamiento relativo para gráficos absolutos */
 }
 
-.lista__reprocann {
-  list-style-type: none; /* Cambia el tipo de marcador de la lista */
-  padding-left: 20px; /* Añade espacio a la izquierda para alinear la lista */
-  text-align: center; /* Alinea el texto de los elementos de la lista a la izquierda */
-  color: white;
+/* Alinear el marciano sin desplazar el texto */
+.marciano {
+  position: absolute; /* Elimina el marciano del flujo del documento */
+  top: 100%; /* Ajusta la posición desde arriba */
+  left: 7%; /* Ajusta la posición desde la izquierda para colocarlo donde lo desees */
+  transform: translate(-50%, -50%); /* Centra el marciano */
+
+  animation: serpenteoEnLugar 5s infinite ease-in-out; /* Animación continua y suave */
 }
 
-.lista__reprocann li {
-  margin-bottom: 10px; /* Espacio entre los elementos de la lista */
-  font-size: 18px;
+.marciano img {
+  width: 230px; /* Ajusta el tamaño del marciano */
+  height: auto;
 }
 
-.marciano__verde img {
-  width: 230px; /* Ajusta el tamaño si es necesario */
-}
-
-.marciano__verde {
-  position: fixed;
-  top: 20%; /* Ajusta el punto de partida para que no esté debajo del título */
-  left: 5%; /* Mantén el marciano en el costado izquierdo */
-  width: 100px; /* Tamaño del marciano */
-  transform: translateY(0); /* Empieza en su posición original */
-  animation: flotarRapido 5s infinite ease-in-out; /* Animación solo de flotación */
-  z-index: 1; /* Asegura que esté debajo del título */
-}
-
-@keyframes flotarRapido {
+/* Animación de serpenteo en el lugar */
+@keyframes serpenteoEnLugar {
   0% {
-    transform: translateY(0);
+    transform: translate(0, 0) rotate(0deg); /* Posición inicial sin rotación */
   }
   25% {
-    transform: translateY(-10vh);
+    transform: translate(10px, -5px) rotate(5deg); /* Se mueve un poco hacia la derecha y hacia arriba, con ligera rotación */
   }
   50% {
-    transform: translateY(20vh);
+    transform: translate(-10px, 5px) rotate(-5deg); /* Mueve hacia la izquierda y abajo */
   }
   75% {
-    transform: translateY(-15vh);
+    transform: translate(10px, -5px) rotate(5deg); /* Se mueve nuevamente hacia la derecha y arriba */
   }
   100% {
-    transform: translateY(0);
+    transform: translate(0, 0) rotate(0deg); /* Vuelve a la posición original */
+  }
+}
+
+.texto-marciano-verde {
+  display: flex;
+  justify-content: center; /* Mantiene centrado */
+  align-items: center;
+  gap: 50px; /* Aumenta el espacio entre el marciano y el texto */
+}
+
+/* Alinear el marciano sin desplazar el texto */
+.marciano-verde {
+  position: absolute; /* Elimina el marciano del flujo del documento */
+  top: 180%; /* Ajusta la posición desde arriba */
+  right: 3%; /* Ajusta la posición desde la izquierda para colocarlo donde lo desees */
+  animation: aparecerYBailar 3s forwards; /* Aplica la animación */
+}
+
+.marciano-verde img {
+  width: 230px; /* Ajusta el tamaño del marciano */
+  height: auto;
+}
+
+@keyframes aparecerYBailar {
+  0% {
+    right: -150px; /* Fuera de la pantalla a la derecha */
+  }
+  50% {
+    right: 20px; /* Posición final */
+  }
+  70% {
+    transform: translateX(10px); /* Movimiento suave hacia la derecha */
+  }
+  80% {
+    transform: translateX(-10px); /* Movimiento suave hacia la izquierda */
+  }
+  100% {
+    transform: translateX(0); /* Regresa a la posición original */
   }
 }
