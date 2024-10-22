@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Formulario de inscricion al Club Blow. Explora nuestros socios y conoce más sobre nosotros.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../multimedia/favicon.ico" type="image/x-icon">
+    <title>Formulario Profesional</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Montserrat", "Open Sans", sans-serif;
+            background-color: #000000;
+            padding-top: 240px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 100px;
+            /* Ajustado para que el formulario esté más centrado verticalmente */
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            /* Ancho aumentado para el formulario */
+            max-width: 90%;
+            /* Máximo ancho para pantallas pequeñas */
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        .radio-group input {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 50%;
+            padding: 20px;
+            background-color: #65809d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Formulario de Inscripción</h2>
+            <form id="reprocann-form">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre y apellido" required>
+
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" name="domicilio" placeholder="Ingresa tu domicilio" required>
+
+                <label for="tipo-doc">Tipo de Documento:</label>
+                <select id="tipo-doc" name="tipo-doc" required>
+                    <option value="">Seleccione...</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="numero-doc">Número de Documento:</label>
+                <input type="text" id="numero-doc" name="numero-doc" placeholder="Ingresa tu número de documento"
+                    required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" required>
+
+                <label for="fecha-nac">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha-nac" name="fecha-nac" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+
+                <label>¿Posee Reprocann?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="reprocann" value="si" required> Sí</label>
+                    <label><input type="radio" name="reprocann" value="no" required> No</label>
+                </div>
+
+                <label for="codigo">Código de Vinculación:</label>
+                <input type="text" id="codigo" name="codigo" placeholder="Ingresa tu código de vinculación" required>
+
+                <label for="medico-nombre">Nombre del Médico Reprocann:</label>
+                <input type="text" id="medico-nombre" name="medico-nombre" placeholder="Ingresa el nombre del médico"
+                    required>
+
+                <label for="medico-telefono">Teléfono del Médico:</label>
+                <input type="tel" id="medico-telefono" name="medico-telefono"
+                    placeholder="Ingresa el teléfono del médico" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('reprocann-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+
+            // Captura los datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const domicilio = document.getElementById('domicilio').value;
+            const tipoDoc = document.getElementById('tipo-doc').value;
+            const numeroDoc = document.getElementById('numero-doc').value;
+            const edad = document.getElementById('edad').value;
+            const fechaNac = document.getElementById('fecha-nac').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const reprocann = document.querySelector('input[name="reprocann"]:checked').value;
+            const codigo = document.getElementById('codigo').value;
+            const medicoNombre = document.getElementById('medico-nombre').value;
+            const medicoTelefono = document.getElementById('medico-telefono').value;
+
+            // Muestra los datos en la consola (puedes cambiar esto para mostrar en un modal o en el DOM)
+            console.log('Nombre y Apellido:', nombre);
+            console.log('Domicilio:', domicilio);
+            console.log('Tipo de Documento:', tipoDoc);
+            console.log('Número de Documento:', numeroDoc);
+            console.log('Edad:', edad);
+            console.log('Fecha de Nacimiento:', fechaNac);
+            console.log('Teléfono:', telefono);
+            console.log('Correo Electrónico:', email);
+            console.log('Posee Reprocann:', reprocann);
+            console.log('Código de Vinculación:', codigo);
+            console.log('Nombre del Médico Reprocann:', medicoNombre);
+            console.log('Teléfono del Médico:', medicoTelefono);
+
+            // También puedes mostrar un mensaje al usuario
+            alert('Formulario enviado con éxito. Revisa la consola para ver los datos.');
+        });
+    </script>
+</body>
+
+</html>
