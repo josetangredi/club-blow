@@ -18,7 +18,7 @@ main {
 
 /* Espaciado entre secciones */
 .section {
-  margin: 40px 0; /* Ajusta este valor para cambiar la distancia entre secciones */
+  margin: 20px 0; /* Ajustado para reducir la distancia entre secciones */
 }
 
 /* Menu */
@@ -85,7 +85,7 @@ main {
 .logo {
   width: 700px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Ajustado para reducir el espacio debajo del logo */
 }
 
 .contenedor {
@@ -95,7 +95,7 @@ main {
 
 .titulo-contenedor {
   text-align: center; /* Centra el logo horizontalmente */
-  margin-top: 20px; /* Puedes ajustar este valor para espaciar el logo desde la parte superior */
+  margin-top: 10px; /* Ajustado para espaciar el logo desde la parte superior */
 }
 
 /* Intro */
@@ -106,7 +106,7 @@ main {
   text-transform: uppercase;
   font-weight: bolder;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Ajustado para reducir el espacio debajo de los títulos */
 }
 
 .titulo__secundario__nosotros {
@@ -131,15 +131,6 @@ main {
   padding: 20px;
 }
 
-/* Aplica la clase de sección a estos contenedores */
-.contenedor__intro,
-.contenedor__nosotros,
-.contenedor__socios,
-.contenedor__secundario__nosotros,
-.contenedor__reprocann {
-  margin: 40px 0; /* Ajusta la separación entre secciones */
-}
-
 .parrafo__intro,
 .parrafo__nosotros,
 .parrafo__secundario__nosotros,
@@ -149,13 +140,13 @@ main {
   text-align: center;
   font-size: 20px;
   line-height: 1.6;
-  padding-bottom: 0px;
+  padding-bottom: 0; /* Eliminado para reducir el espacio inferior */
 }
 
 /* Sección Nosotros */
 #nosotros {
   text-align: center;
-  padding-top: 90px;
+  padding-top: 40px;
 }
 
 .titulo__secundario__nosotros {
@@ -163,13 +154,13 @@ main {
   text-transform: uppercase;
   font-weight: bolder;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 15px; /* Ajustado para reducir el espacio */
 }
 
 /* Sección Socios */
 #socios {
   text-align: center;
-  padding-top: 90px;
+  padding-top: 40px;
 }
 
 /*reprocan*/
@@ -177,7 +168,7 @@ main {
   color: white;
   padding: 20px;
   text-align: center;
-  padding-top: 90px;
+  padding-top: 40px;
 }
 
 .contenedor__reprocann {
@@ -190,7 +181,7 @@ main {
 .titulo__reprocann {
   color: white;
   font-size: 2em;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Ajustado para reducir el espacio */
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
@@ -200,7 +191,7 @@ main {
 .inscription,
 .beneficios__reprocann {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Ajustado para reducir el espacio */
   line-height: 1.5;
   text-align: center;
   color: white;
@@ -208,13 +199,13 @@ main {
 
 .lista__inscripcion {
   list-style-type: none;
-  margin: 0 auto 20px; /* Centra la lista y margenes */
+  margin: 0 auto 15px; /* Centra la lista y ajusta márgenes */
   padding: 0; /* Elimina el padding predeterminado */
   max-width: 600px; /* Ancho máximo opcional */
 }
 
 .lista__inscripcion li {
-  margin-bottom: 19px; /* Espacio entre los elementos */
+  margin-bottom: 15px; /* Ajustado para reducir el espacio entre los elementos */
   position: relative; /* Para posicionamiento relativo */
   text-align: center; /* Centra el texto */
   font-size: 20px; /* Tamaño de fuente */
@@ -262,13 +253,13 @@ main {
 .button__form {
   display: inline-block;
   padding: 15px 20px;
-  background-color: #2a21ca;
-  color: white;
+  background-color: #e51515;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   border-radius: 4px;
   text-align: center;
 }
 
 .button__form:hover {
-  background-color: #004792;
+  background-color: #ff4343;
 }
