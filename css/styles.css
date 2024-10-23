@@ -21,75 +21,74 @@ main {
   margin: 20px 0; /* Ajustado para reducir la distancia entre secciones */
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
+/* Menú en Desktop */
 .menu {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
-  justify-content: space-between; /* Espacia el contenido */
-  align-items: center; /* Alinea el contenido verticalmente */
+  justify-content: space-between; /* Lista a la izquierda, ícono reservado a la derecha */
+  align-items: center;
 }
 
-.menu-hamburger {
-  display: none; /* Ocultar por defecto */
-  font-size: 30px; /* Tamaño del ícono */
-  color: #ffffff; /* Color del ícono */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
-}
-
-.menu ul {
+/* Menú lista alineado a la izquierda */
+.menu-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Menú horizontal para escritorio */
-  justify-content: center; /* Centra el menú en pantalla grande */
-  flex-grow: 1; /* Permite que la lista de menús crezca y ocupe el espacio */
+  display: flex; /* Menú en línea en desktop */
 }
 
-.menu ul li {
+.menu-list li {
   margin: 0 20px;
 }
 
-.menu ul li a {
+.menu-list li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
   padding: 15px 20px;
+  display: block;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.menu ul li a:hover {
+.menu-list li a:hover {
   background-color: #010101;
-  color: white;
 }
 
-/* Estilos para dispositivos móviles */
+/* Ícono hamburguesa: Oculto en desktop */
+.menu-hamburger {
+  display: none;
+}
+
+/* Responsive: Pantallas pequeñas */
 @media (max-width: 768px) {
   .menu {
-    align-items: end;
-  }
-
-  .menu ul {
-    display: none; /* Oculta el menú por defecto en móviles */
-    flex-direction: column; /* Coloca los elementos en columna */
-    position: absolute; /* Permite que el menú se superponga */
-    top: 60px; /* Ajusta según el tamaño del menú */
-    left: 0;
-    width: 100%; /* Ancho completo */
+    position: relative; /* Asegura el posicionamiento del ícono hamburguesa */
   }
 
   .menu-hamburger {
-    display: block; /* Muestra el ícono hamburguesa en móviles */
+    display: block; /* Muestra el ícono en móvil */
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    position: absolute;
+    top: 20px; /* Alineado en la parte superior */
+    right: -140px; /* Alineado a la derecha */
   }
 
-  .menu-list.active {
-    display: flex; /* Muestra el menú cuando está activo */
+  .menu-list {
+    display: none; /* Oculta la lista en móvil */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    width: 100%; /* Ancho completo del menú desplegable */
+  }
+
+  .menu-list li {
+    margin: 10px 0;
+    text-align: right;
   }
 }
 
@@ -309,5 +308,36 @@ body {
     width: 100%; /* Reducir el tamaño del logo proporcionalmente */
     max-width: 350px; /* Tamaño máximo en píxeles para mayor control */
     margin-bottom: 50px;
+  }
+}
+
+/* Ajustes de texto en mobile */
+@media (max-width: 768px) {
+  .parrafo__intro,
+  .parrafo__nosotros,
+  .parrafo__socios,
+  .lista__inscripcion,
+  .lista__beneficios,
+  .lista__inscripcion li,
+  .inscription,
+  .parrafo__reprocann {
+    font-size: 16px;
+    font-family: "Montserrat", "Open Sans", sans-serif;
+  }
+
+  .titulo__intro,
+  .titulo__nosotros,
+  .titulo__secundario__nosotros,
+  .titulo__reprocann,
+  .titulo__socios {
+    font-size: 18px;
+    font-family: "Montserrat", "Open Sans", sans-serif;
+  }
+
+  .titulo__secundario__reprocann,
+  .beneficios__reprocann,
+  .parrafo__secundario__nosotros {
+    font-size: 17px;
+    font-family: "Montserrat", "Open Sans", sans-serif;
   }
 }
