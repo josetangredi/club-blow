@@ -21,20 +21,35 @@ main {
   margin: 20px 0; /* Ajustado para reducir la distancia entre secciones */
 }
 
-/* Menu */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .menu {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding-top: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Espacia el contenido */
+  align-items: center; /* Alinea el contenido verticalmente */
+}
+
+.menu-hamburger {
+  display: none; /* Ocultar por defecto */
+  font-size: 30px; /* Tamaño del ícono */
+  color: #ffffff; /* Color del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
 }
 
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center; /* Centra el menú */
+  display: flex; /* Menú horizontal para escritorio */
+  justify-content: center; /* Centra el menú en pantalla grande */
+  flex-grow: 1; /* Permite que la lista de menús crezca y ocupe el espacio */
 }
 
 .menu ul li {
@@ -52,6 +67,30 @@ main {
 .menu ul li a:hover {
   background-color: #010101;
   color: white;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .menu {
+    align-items: end;
+  }
+  
+  .menu ul {
+    display: none; /* Oculta el menú por defecto en móviles */
+    flex-direction: column; /* Coloca los elementos en columna */
+    position: absolute; /* Permite que el menú se superponga */
+    top: 60px; /* Ajusta según el tamaño del menú */
+    left: 0;
+    width: 100%; /* Ancho completo */
+  }
+
+  .menu-hamburger {
+    display: block; /* Muestra el ícono hamburguesa en móviles */
+  }
+
+  .menu-list.active {
+    display: flex; /* Muestra el menú cuando está activo */
+  }
 }
 
 /*video estrellas*/
@@ -262,4 +301,13 @@ main {
 
 .button__form:hover {
   background-color: #ff4343;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .logo {
+    width: 100%; /* Reducir el tamaño del logo proporcionalmente */
+    max-width: 350px; /* Tamaño máximo en píxeles para mayor control */
+    margin-bottom: 50px;
+  }
 }
