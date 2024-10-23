@@ -82,8 +82,8 @@ main {
     display: none; /* Oculta la lista en móvil */
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    width: 100%; /* Ancho completo del menú desplegable */
+    top: 10px;
+    width: 70%; /* Ancho completo del menú desplegable */
   }
 
   .menu-list li {
