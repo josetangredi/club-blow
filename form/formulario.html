@@ -27,7 +27,7 @@
             align-items: center;
             width: 100%;
             padding-top: 100px;
-            /* Ajustado para que el formulario esté más centrado verticalmente */
+
         }
 
         .card {
@@ -36,9 +36,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             width: 600px;
-            /* Ancho aumentado para el formulario */
             max-width: 90%;
-            /* Máximo ancho para pantallas pequeñas */
             text-align: left;
         }
 
@@ -166,9 +164,8 @@
 
     <script>
         document.getElementById('reprocann-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+            event.preventDefault();
 
-            // Captura los datos del formulario
             const nombre = document.getElementById('nombre').value;
             const domicilio = document.getElementById('domicilio').value;
             const tipoDoc = document.getElementById('tipo-doc').value;
@@ -182,7 +179,6 @@
             const medicoNombre = document.getElementById('medico-nombre').value;
             const medicoTelefono = document.getElementById('medico-telefono').value;
 
-            // Muestra los datos en la consola (puedes cambiar esto para mostrar en un modal o en el DOM)
             console.log('Nombre y Apellido:', nombre);
             console.log('Domicilio:', domicilio);
             console.log('Tipo de Documento:', tipoDoc);
@@ -196,7 +192,6 @@
             console.log('Nombre del Médico Reprocann:', medicoNombre);
             console.log('Teléfono del Médico:', medicoTelefono);
 
-            // También puedes mostrar un mensaje al usuario
             alert('Formulario enviado con éxito. Revisa la consola para ver los datos.');
         });
     </script>
