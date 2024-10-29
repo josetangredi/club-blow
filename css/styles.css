@@ -1,3 +1,27 @@
+/* Elimina padding y márgenes globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura que el contenido se mantenga dentro del ancho de pantalla */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Ajustes generales */
 body {
   background-color: #000000;
@@ -7,18 +31,18 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el contenido horizontalmente */
+  align-items: center;
 }
 
 main {
   width: 100%;
-  max-width: 1200px; /* Limita el ancho de la página para mejor legibilidad */
-  padding: 20px; /* Espacio interno alrededor del contenido */
+  max-width: 1200px;
+  padding: 20px;
 }
 
 /* Espaciado entre secciones */
 .section {
-  margin: 20px 0; /* Ajustado para reducir la distancia entre secciones */
+  margin: 20px 0;
 }
 
 /* Menú en Desktop */
@@ -28,7 +52,7 @@ main {
   z-index: 1000;
   padding: 20px;
   display: flex;
-  justify-content: space-between; /* Lista a la izquierda, ícono reservado a la derecha */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -37,7 +61,7 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Menú en línea en desktop */
+  display: flex;
 }
 
 .menu-list li {
@@ -65,25 +89,25 @@ main {
 /* Responsive: Pantallas pequeñas */
 @media (max-width: 768px) {
   .menu {
-    position: relative; /* Asegura el posicionamiento del ícono hamburguesa */
+    position: relative;
   }
 
   .menu-hamburger {
-    display: block; /* Muestra el ícono en móvil */
+    display: block;
     cursor: pointer;
     font-size: 28px;
     color: white;
     position: absolute;
-    top: 20px; /* Alineado en la parte superior */
-    right: -140px; /* Alineado a la derecha */
+    top: 20px;
+    right: -140px;
   }
 
   .menu-list {
-    display: none; /* Oculta la lista en móvil */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 10px;
-    width: 70%; /* Ancho completo del menú desplegable */
+    width: 70%;
   }
 
   .menu-list li {
@@ -92,7 +116,7 @@ main {
   }
 }
 
-/*video estrellas*/
+/* video estrellas */
 .background-video {
   position: fixed;
   top: 0;
@@ -109,7 +133,7 @@ main {
   object-fit: cover;
 }
 
-/*logo blow*/
+/* logo blow */
 .titulo-contenedor {
   display: flex;
   justify-content: center;
@@ -123,17 +147,17 @@ main {
 .logo {
   width: 700px;
   height: auto;
-  margin-bottom: 10px; /* Ajustado para reducir el espacio debajo del logo */
+  margin-bottom: 10px;
 }
 
 .contenedor {
   position: relative;
-  height: 100vh; /* El contenedor ocupa toda la altura de la ventana */
+  height: 100vh;
 }
 
 .titulo-contenedor {
-  text-align: center; /* Centra el logo horizontalmente */
-  margin-top: 10px; /* Ajustado para espaciar el logo desde la parte superior */
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Intro */
@@ -144,7 +168,7 @@ main {
   text-transform: uppercase;
   font-weight: bolder;
   color: white;
-  margin-bottom: 15px; /* Ajustado para reducir el espacio debajo de los títulos */
+  margin-bottom: 15px;
 }
 
 .titulo__secundario__nosotros {
@@ -178,7 +202,7 @@ main {
   text-align: center;
   font-size: 20px;
   line-height: 1.6;
-  padding-bottom: 0; /* Eliminado para reducir el espacio inferior */
+  padding-bottom: 0;
 }
 
 /* Sección Nosotros */
@@ -192,7 +216,7 @@ main {
   text-transform: uppercase;
   font-weight: bolder;
   color: white;
-  margin-bottom: 15px; /* Ajustado para reducir el espacio */
+  margin-bottom: 15px;
 }
 
 /* Sección Socios */
@@ -201,7 +225,7 @@ main {
   padding-top: 40px;
 }
 
-/*reprocan*/
+/* reprocan */
 #reprocann {
   color: white;
   padding: 20px;
@@ -212,14 +236,13 @@ main {
 .contenedor__reprocann {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  padding-bottom: 50px;
+  padding: 20px 0 50px;
 }
 
 .titulo__reprocann {
   color: white;
   font-size: 2em;
-  margin-bottom: 10px; /* Ajustado para reducir el espacio */
+  margin-bottom: 10px;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
@@ -229,7 +252,7 @@ main {
 .inscription,
 .beneficios__reprocann {
   font-size: 1.2em;
-  margin-bottom: 15px; /* Ajustado para reducir el espacio */
+  margin-bottom: 15px;
   line-height: 1.5;
   text-align: center;
   color: white;
@@ -237,35 +260,34 @@ main {
 
 .lista__inscripcion {
   list-style-type: none;
-  margin: 0 auto 15px; /* Centra la lista y ajusta márgenes */
-  padding: 0; /* Elimina el padding predeterminado */
-  max-width: 600px; /* Ancho máximo opcional */
+  margin: 0 auto 15px;
+  padding: 0;
+  max-width: 600px;
 }
 
 .lista__inscripcion li {
-  margin-bottom: 15px; /* Ajustado para reducir el espacio entre los elementos */
-  position: relative; /* Para posicionamiento relativo */
-  text-align: center; /* Centra el texto */
-  font-size: 20px; /* Tamaño de fuente */
-  padding-bottom: 10px; /* Espacio entre el texto y la línea */
-  border-bottom: 1px solid transparent; /* Línea debajo de cada elemento invisible */
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid transparent;
 }
 
 .lista__inscripcion li::after {
   content: "";
-  display: block; /* Para que el pseudo-elemento ocupe espacio */
-  width: 30%; /* Cambia este valor para ajustar el largo de la línea */
-  height: 2px; /* Grosor de la línea */
-  background-color: #ffffff; /* Color de la línea */
-  margin: 15px auto 0; /* Espacio entre el texto y la línea, centrado */
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 15px auto 0;
 }
 
-/* Agregamos un contenedor para el texto largo */
 .lista__inscripcion li p {
-  margin: 0; /* Elimina márgenes del párrafo */
-  padding: 0; /* Elimina padding del párrafo */
-  width: 100%; /* Asegura que el párrafo ocupe el ancho completo */
-  text-align: center; /* Centra el texto en el párrafo */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .lista__inscripcion li:last-child {
@@ -274,8 +296,7 @@ main {
 
 .titulo__secundario__reprocann {
   font-size: 1.5em;
-  margin-top: 60px;
-  margin-bottom: 10px;
+  margin: 60px 0 10px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -287,65 +308,56 @@ main {
   margin: 0 auto;
 }
 
-/*boton formulario*/
+/* botón formulario */
 .button__form {
   display: inline-block;
   padding: 15px 20px;
-  background-color: #e51515;
-  color: rgb(0, 0, 0);
+  background-color: transparent;
+  color: rgb(194, 14, 14);
   text-decoration: none;
   border-radius: 4px;
+  border: 2px solid red;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .button__form:hover {
-  background-color: #ff4343;
+  background-color: #9c0505;
+  color: #ffffff;
 }
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
   .logo {
-    width: 100%; /* Reducir el tamaño del logo proporcionalmente */
-    max-width: 350px; /* Tamaño máximo en píxeles para mayor control */
+    width: 100%;
+    max-width: 350px;
     margin-bottom: 50px;
   }
-}
 
-/* Ajustes de texto en mobile */
-@media (max-width: 768px) {
   .parrafo__intro,
   .parrafo__nosotros,
   .parrafo__socios,
   .lista__inscripcion,
   .lista__beneficios,
-  .lista__inscripcion li,
-  .inscription,
-  .parrafo__reprocann {
+  .inscription {
     font-size: 16px;
     font-family: "Montserrat", "Open Sans", sans-serif;
   }
 
   .titulo__intro,
   .titulo__nosotros,
-  .titulo__secundario__nosotros,
-  .titulo__reprocann,
-  .titulo__socios {
+  .titulo__secundario__nosotros {
     font-size: 18px;
     font-family: "Montserrat", "Open Sans", sans-serif;
   }
 
-  .titulo__secundario__reprocann,
-  .beneficios__reprocann,
-  .parrafo__secundario__nosotros {
-    font-size: 17px;
-    font-family: "Montserrat", "Open Sans", sans-serif;
-  }
-}
-
-@media (max-width: 768px) {
   .background-video {
     background-image: url("../multimedia/background.mp4");
     background-size: cover;
     background-position: center;
   }
+}
+
+.intro__titulo {
+  width: 200px;
 }

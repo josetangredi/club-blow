@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Formulario de inscricion al Club Blow. Explora nuestros socios y conoce más sobre nosotros.">
+        content="Formulario de inscripción al Club Blow. Explora nuestros socios y conoce más sobre nosotros.">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="../multimedia/favicon.ico" type="image/x-icon">
     <title>Formulario Profesional</title>
@@ -14,11 +14,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 160vh;
             margin: 0;
             font-family: "Montserrat", "Open Sans", sans-serif;
-            background-color: #000000;
-            padding-top: 240px;
+            background-color: #ffffff;
         }
 
         .container {
@@ -26,29 +25,52 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding-top: 100px;
-
+            padding: 20px;
         }
 
         .card {
-            background-color: white;
+            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 600px;
-            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
             text-align: left;
         }
 
         h2 {
             text-align: center;
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-group span {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
         }
 
         label {
-            font-weight: bold;
-            margin-top: 15px;
+            font-weight: normal;
+            margin-top: 10px;
             display: block;
             color: #333;
         }
@@ -56,10 +78,10 @@
         input,
         select {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin: 5px 0 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             box-sizing: border-box;
         }
 
@@ -69,34 +91,17 @@
             outline: none;
         }
 
-        .radio-group {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
-            font-weight: normal;
-        }
-
-        .radio-group input {
-            margin-right: 10px;
-        }
-
         button {
-            width: 50%;
-            padding: 20px;
+            width: 100%;
+            padding: 10px;
             background-color: #65809d;
-            color: white;
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            display: block;
-            margin: 20px auto;
+            margin-top: 15px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
@@ -105,26 +110,21 @@
 
         @media (max-width: 768px) {
             .card {
-                max-width: 80%;
-                /* Ancho reducido en dispositivos pequeños */
+                max-width: 90%;
                 padding: 15px;
-                /* Menos padding */
-                margin: 10px;
-                /* Asegura espacio para ver el fondo */
+            }
+
+            h2 {
+                font-size: 18px;
             }
 
             input,
             select {
-                font-size: 16px;
-            }
-
-            h2 {
-                font-size: 22px;
-                margin-bottom: 20px;
+                font-size: 14px;
             }
 
             button {
-                font-size: 18px;
+                font-size: 16px;
                 padding: 12px;
             }
         }
@@ -167,9 +167,11 @@
                 <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
 
                 <label>¿Posee Reprocann?</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="reprocann" value="si" required> Sí</label>
-                    <label><input type="radio" name="reprocann" value="no" required> No</label>
+                <div class="form-group">
+                    <div class="radio-group">
+                        <label><input type="radio" name="reprocann" value="si" required> Sí</label>
+                        <label><input type="radio" name="reprocann" value="no" required> No</label>
+                    </div>
                 </div>
 
                 <label for="codigo">Código de Vinculación:</label>
@@ -191,33 +193,21 @@
     <script>
         document.getElementById('reprocann-form').addEventListener('submit', function (event) {
             event.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const domicilio = document.getElementById('domicilio').value;
-            const tipoDoc = document.getElementById('tipo-doc').value;
-            const numeroDoc = document.getElementById('numero-doc').value;
-            const edad = document.getElementById('edad').value;
-            const fechaNac = document.getElementById('fecha-nac').value;
-            const telefono = document.getElementById('telefono').value;
-            const email = document.getElementById('email').value;
-            const reprocann = document.querySelector('input[name="reprocann"]:checked').value;
-            const codigo = document.getElementById('codigo').value;
-            const medicoNombre = document.getElementById('medico-nombre').value;
-            const medicoTelefono = document.getElementById('medico-telefono').value;
-
-            console.log('Nombre y Apellido:', nombre);
-            console.log('Domicilio:', domicilio);
-            console.log('Tipo de Documento:', tipoDoc);
-            console.log('Número de Documento:', numeroDoc);
-            console.log('Edad:', edad);
-            console.log('Fecha de Nacimiento:', fechaNac);
-            console.log('Teléfono:', telefono);
-            console.log('Correo Electrónico:', email);
-            console.log('Posee Reprocann:', reprocann);
-            console.log('Código de Vinculación:', codigo);
-            console.log('Nombre del Médico Reprocann:', medicoNombre);
-            console.log('Teléfono del Médico:', medicoTelefono);
-
+            const data = {
+                nombre: document.getElementById('nombre').value,
+                domicilio: document.getElementById('domicilio').value,
+                tipoDoc: document.getElementById('tipo-doc').value,
+                numeroDoc: document.getElementById('numero-doc').value,
+                edad: document.getElementById('edad').value,
+                fechaNac: document.getElementById('fecha-nac').value,
+                telefono: document.getElementById('telefono').value,
+                email: document.getElementById('email').value,
+                reprocann: document.querySelector('input[name="reprocann"]:checked').value,
+                codigo: document.getElementById('codigo').value,
+                medicoNombre: document.getElementById('medico-nombre').value,
+                medicoTelefono: document.getElementById('medico-telefono').value
+            };
+            console.log(data);
             alert('Formulario enviado con éxito. Revisa la consola para ver los datos.');
         });
     </script>
